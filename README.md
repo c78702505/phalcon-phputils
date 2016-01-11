@@ -1,2 +1,2 @@
 # phalcon-phputils
-library
+This is a php library.
