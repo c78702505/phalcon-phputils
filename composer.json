@@ -1,0 +1,14 @@
+{
+  "name": "c78702505/phalcon-phputils",
+  "description": "This is a php utils library",
+  "authors": [
+    {
+      "name": "Rivers",
+      "email": "rivers-01@163.com"
+    }
+  ],
+
+  "require": {
+    "php": ">= 5.4"
+  }
+}
