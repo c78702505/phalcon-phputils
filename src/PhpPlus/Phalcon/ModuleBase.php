@@ -86,9 +86,10 @@ class ModuleBase implements ModuleDefinitionInterface
         /**
          * Setting up the view component
          */
-        $di['view'] = function () use ($config, $debug) {
+        $DD= $this::DIR;
+        $di['view'] = function () use ($config, $debug,$DD) {
             $view = new View();
-            $viewDir = $this::DIR . '/views/';
+            $viewDir = $DD . '/views/';
             if($config->offsetExists('application') && $config->application->offsetExists('viewsDir') && $config->application->offsetExists('viewsDir')) {
                 $viewDir = $config->application->viewsDir;
             }
@@ -97,8 +98,8 @@ class ModuleBase implements ModuleDefinitionInterface
             $viewEngines = [
                 '.phtml' => 'Phalcon\Mvc\View\Engine\Php'
             ];
-            $viewEngines['.volt'] = function ($view, $di) use ($config, $debug) {
-                $cacheDir = $this::DIR . '/../cache/';
+            $viewEngines['.volt'] = function ($view, $di) use ($config, $debug,$DD) {
+                $cacheDir = $DD. '/../cache/';
                 $appConfig = $di['appConfig'];
 
                 if($appConfig->offsetExists('volt') && $appConfig->volt->offsetExists('cacheDir')) {
